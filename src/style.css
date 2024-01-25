@@ -1,0 +1,49 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+.contianer{
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 300px 100px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #6739b7;
+    width: 300px;
+}
+
+
+
+button{
+    background-color: #17c55f;
+    border: none;
+    height: 40px;
+    width: 150px;
+    color: white;
+    font-size: 17px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+#img{
+    height: 140px;
+    width: 140px;
+}
+
+#para{
+    font-size: 20px;
+    color: aliceblue;
+    height: 140px;
+    width: 180px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
