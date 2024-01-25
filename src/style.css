@@ -2,6 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     justify-content: center;
+    background-color: #b286ff;
 }
 
 .contianer{
@@ -46,4 +47,19 @@ button{
     justify-content: center;
     align-items: center;
     margin-top: 120px;
+}
+
+
+@media(max-width:750px) {
+    .contianer{
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: 300px 100px;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #6739b7;
+        width: 300px;
+    }
 }

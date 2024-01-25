@@ -14,18 +14,35 @@ function getLocation() {
   function showPosition(position) {
    const laTitude = position.coords.latitude;
    const lonGitude = position.coords.longitude;
+   
 
-   const targetLat = Math.abs(17.6523289-laTitude);
-   const targetLong = Math.abs(75.2780575-lonGitude);
+   console.log(laTitude);
+   console.log(lonGitude);
 
-   console.log(targetLat);
-   console.log(targetLong);
+   var targetLat = 17.6523289;
+   var targetLong = 75.2780575;
 
-   const disatnceRange = 50;
+    const R = 6371;
+    const dLat = toRadians(laTitude - targetLat);
+    const dLon = toRadians(lonGitude - targetLong);
 
-   if(targetLat<=disatnceRange && targetLong<=disatnceRange)
+    
+    var targetLat = toRadians(targetLat);
+    var targetLong  = toRadians(targetLong);
+
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRadians(targetLat)) * Math.cos(toRadians(laTitude)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    const distance = R * c ;
+
+    console.log(distance);
+
+   const disatnceRange = 5; // km
+
+   if(distance <= disatnceRange)
    {
-    document.querySelector("img").setAttribute("src" , "../public/qr.png");
+    document.querySelector("img").setAttribute("src" , "qr.png");
     document.querySelector("img").setAttribute("id" , "img");
    }
    else{
@@ -38,6 +55,8 @@ function getLocation() {
    console.log("longitude: " + lonGitude);
 
 
-//    const tarGetLat = 
-//    const tarGetLong = 
   }
+
+function toRadians(degrees) {
+    return degrees * (Math.PI / 180);
+}
